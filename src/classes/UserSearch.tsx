@@ -19,11 +19,11 @@ interface UserSearchState {
 class UserSearch extends Component<UserSearchProps> {
   
 
-  state= {
+  state:UserSearchState = {
     name: '',
-    user: undefined
+    user: undefined,
   };
-  onClick= ( )=> {
+  onClick = ( ) => {
   
     const foundUser = this.props.users.find((user)=>{
       return user.name=== this.state.name;
@@ -37,7 +37,7 @@ class UserSearch extends Component<UserSearchProps> {
     return (
       <div><h3>User Search</h3>
     <input type="text" value={name} onChange={(e)=> this.setState(e.target.value)} />
-    <button onClick={onClick}>Search</button> 
+    <button onClick={this.onClick}>Search</button> 
     <div>
       {user && user.name}
       {user && user.age}
@@ -47,4 +47,4 @@ class UserSearch extends Component<UserSearchProps> {
   }
 }
 
-}
+export default UserSearch;
