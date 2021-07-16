@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef ,useEffect} from "react";
 
 
 const users =[
@@ -13,6 +13,14 @@ const UserSearch:React.FC =()=>{
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [name, setName] = useState('') ;
   const [user,setUser] = useState<{name:string,age:number} | undefined >();
+
+  useEffect(()=>{
+    //This is a good way to say to typescript  you need the return and evite some errors in your application
+    if(!inputRef.current){
+      return;
+    }
+    inputRef.current.focus();
+  },[])
   const onClick = ()=>{
     const foundUser = users.find((user)=>{
       return user.name=== name;
