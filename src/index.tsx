@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import EventComponent from "./event/EventComponent";
+// import EventComponent from "./event/EventComponent";
 // import GuestList from "./state/GuestList";
 import UserSearch from "./refs/UserSearch";
 
